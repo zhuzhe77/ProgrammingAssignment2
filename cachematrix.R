@@ -1,3 +1,5 @@
+## Creates a special matrix object that stores a matrix
+## and can cache its inverse using lexical scoping.
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
 
@@ -23,6 +25,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
+## Computes the inverse of the matrix. If the inverse has
+## already been calculated, retrieves it from the cache.
 cacheSolve <- function(x, ...) {
     m <- x$getinverse()
 
@@ -37,6 +41,5 @@ cacheSolve <- function(x, ...) {
     x$setinverse(m)
     m
 }
-
 
 
